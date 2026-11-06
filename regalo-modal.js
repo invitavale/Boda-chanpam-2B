@@ -7,25 +7,25 @@
    5) Código de vestimenta: copiar codigo-vestimenta.jpg; el botón llama a
       openDressCodeModal()  (o showDressCode()). */
 (function () {
-    // PENDIENTE: completar con los datos reales de José y Beliza
+    // Plantilla de muestra: datos de ejemplo
     const REGALO = {
         mesaRegalosUrl: '',
         titulares: [
             {
-                nombre: 'José Toribio Núñez',
+                nombre: 'Lucía Alejandra Rosario',
                 cuentas: [
-                    ['Banco · Ahorro', 'Por confirmar']
+                    ['Banco · Ahorro', '000-000000-0']
                 ],
-                cedula: 'Por confirmar',
-                correo: 'Por confirmar'
+                cedula: '000-0000000-0',
+                correo: 'lucia@ejemplo.com'
             },
             {
-                nombre: 'Beliza Maldonado',
+                nombre: 'Héctor Daniel Peña',
                 cuentas: [
-                    ['Banco · Ahorro', 'Por confirmar']
+                    ['Banco · Ahorro', '000-000000-0']
                 ],
-                cedula: 'Por confirmar',
-                correo: 'Por confirmar'
+                cedula: '000-0000000-0',
+                correo: 'hector@ejemplo.com'
             }
         ]
     };
@@ -58,10 +58,10 @@
                 '<div class="rg-choose" id="rgChoose">' +
                   '<div class="rg-title">Regalos</div>' +
                   '<p class="rg-sub">Tu presencia es nuestro mejor regalo. Si deseas tener un detalle con nosotros:</p>' +
-                  (REGALO.mesaRegalosUrl ? '<button type="button" class="rg-option" data-rg="mesa">' +
+                  '<button type="button" class="rg-option" data-rg="mesa">' +
                     '<span class="rg-option-icon">' + ICON_GIFT + '</span>' +
                     '<span class="rg-option-text"><strong>Lista de regalos</strong><span>Ver nuestra lista de regalos</span></span>' +
-                    '<span class="rg-option-arrow">›</span></button>' : '') +
+                    '<span class="rg-option-arrow">›</span></button>' +
                   '<button type="button" class="rg-option" data-rg="bank">' +
                     '<span class="rg-option-icon">' + ICON_BANK + '</span>' +
                     '<span class="rg-option-text"><strong>Datos bancarios</strong><span>Transferencia o depósito</span></span>' +
@@ -88,9 +88,8 @@
             if (btn.dataset.copy !== undefined) return copyValue(btn);
             const a = btn.dataset.rg;
             if (a === 'close') closeGiftModal();
-            else if (a === 'bank') showStep('bank');
             else if (a === 'back') showStep('choose');
-            else if (a === 'mesa') window.open(REGALO.mesaRegalosUrl, '_blank', 'noopener');
+            // Plantilla de muestra: 'Datos bancarios' y 'Lista de regalos' no abren
         });
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') closeGiftModal();

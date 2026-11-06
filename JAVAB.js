@@ -143,7 +143,7 @@ function setupScrollReveal() {
 // Inicializar cuando el DOM esté listo
 // Calendario del mes de la boda con el día marcado (semana de lunes a domingo).
 // Para otra boda, basta con cambiar WEDDING_DATE.
-const WEDDING_DATE = { anio: 2027, mes: 0, dia: 9 }; // mes: 0 = enero
+const WEDDING_DATE = { anio: 2027, mes: 1, dia: 13 }; // mes: 0 = enero
 function renderCalendar() {
     const grid = document.getElementById('calGrid');
     const titulo = document.getElementById('calMes');
@@ -189,16 +189,16 @@ function updateMusicIcon() {
     if (volumeIcon) {
         if (isPlaying) {
             volumeIcon.innerHTML = `
-                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="#5E4B8B" stroke="#fff" stroke-width="1"></polygon>
-                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.08" stroke="#5E4B8B" stroke-width="2"></path>
-                <circle cx="6.5" cy="12" r="1" fill="#7E8C5E"/>
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="#3E4D32" stroke="#fff" stroke-width="1"></polygon>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.08" stroke="#3E4D32" stroke-width="2"></path>
+                <circle cx="6.5" cy="12" r="1" fill="#8FA67A"/>
             `;
         } else {
             volumeIcon.innerHTML = `
-                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="#5E4B8B" stroke="#fff" stroke-width="1"></polygon>
-                <line x1="19" y1="9" x2="17" y2="11" stroke="#C9BDE6" stroke-width="2"></line>
-                <line x1="17" y1="9" x2="19" y2="11" stroke="#C9BDE6" stroke-width="2"></line>
-                <circle cx="6.5" cy="12" r="1" fill="#C9BDE6"/>
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="#3E4D32" stroke="#fff" stroke-width="1"></polygon>
+                <line x1="19" y1="9" x2="17" y2="11" stroke="#D5DDBF" stroke-width="2"></line>
+                <line x1="17" y1="9" x2="19" y2="11" stroke="#D5DDBF" stroke-width="2"></line>
+                <circle cx="6.5" cy="12" r="1" fill="#D5DDBF"/>
             `;
         }
     }
@@ -206,7 +206,7 @@ function updateMusicIcon() {
 
 // Countdown
 function initializeCountdown() {
-    const targetDate = new Date('2027-01-09T17:00:00-04:00').getTime();
+    const targetDate = new Date('2027-02-13T17:00:00-04:00').getTime();
     
     function updateCountdown() {
         const now = new Date().getTime();
@@ -391,15 +391,7 @@ function openLocation(location) {
 const PHOTO_ALBUM_URL = 'https://photos.google.com/';
 
 function sharePhotos() {
-    // Abre el álbum compartido de Google Fotos en una pestaña nueva
-    // (en el celular abre la app de Google Fotos si está instalada).
-    const win = window.open(PHOTO_ALBUM_URL, '_blank');
-    if (win) {
-        win.opener = null;
-    } else {
-        // Si el navegador bloqueó la pestaña nueva, abrir en la misma
-        window.location.href = PHOTO_ALBUM_URL;
-    }
+    // Plantilla de muestra: el botón no abre nada
 }
 
 // Código de vestimenta: imagen flotante (vive en regalo-modal.js)
@@ -429,9 +421,7 @@ function showGifts() {
 // Confirmación de asistencia (Google Form)
 // (antes: https://docs.google.com/forms/d/e/1FAIpQLSdIYoM33yAkMmS4DZCRVmO9_IE0gZT4eEw8cV0r2PgWlYE0Ag/viewform?usp=header)
 function confirmAttendance() {
-    // PENDIENTE: poner el número de WhatsApp de los novios (ej. 'https://wa.me/1809XXXXXXX?text=...')
-    const msg = encodeURIComponent('¡Hola! Confirmo mi asistencia a la boda de José y Beliza el 9 de enero de 2027. 💜');
-    window.open('https://wa.me/?text=' + msg, '_blank', 'noopener');
+    // Plantilla de muestra: el botón no abre nada
 }
 
 // Sistema de Toast
